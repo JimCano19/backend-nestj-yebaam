@@ -1,0 +1,9 @@
+branch-defaults:
+  main:
+    environment: backend-api-env
+global:
+  application_name: backend-api
+  default_platform: Docker
+  default_region: us-east-1
+  profile: eb-cli
+  sc: git

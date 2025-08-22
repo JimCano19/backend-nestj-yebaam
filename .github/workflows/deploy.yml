@@ -1,0 +1,52 @@
+name: CI/CD to EBS with pnpm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Instalar pnpm
+        run: npm install -g pnpm
+
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: Compilar NestJS
+        run: pnpm run build
+
+      - name: Instalar AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
+      - name: Crear ZIP para deploy
+        run: zip -r deploy.zip . -x ".git/*"
+
+      - name: Deploy a Elastic Beanstalk
+        run: |
+          aws elasticbeanstalk create-application-version \
+            --application-name backend-api \
+            --version-label v-${{ github.run_number }} \
+            --source-bundle S3Bucket="elasticbeanstalk-${{ secrets.AWS_REGION }}-${{ secrets.AWS_ACCOUNT_ID }}",S3Key="deploy-${{ github.run_number }}.zip"
+
+          aws elasticbeanstalk update-environment \
+            --environment-name backend-api-env \
+            --version-label v-${{ github.run_number }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
