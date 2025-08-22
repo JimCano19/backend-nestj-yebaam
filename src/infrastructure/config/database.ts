@@ -29,3 +29,4 @@ try {
 }
 
 export { db };
+export { db as database };

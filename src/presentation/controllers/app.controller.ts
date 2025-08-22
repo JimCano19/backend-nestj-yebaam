@@ -1,15 +1,14 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
-import { AppService } from './app.service';
-import { 
-  HealthResponseDto, 
-  DatabaseStatusDto, 
-  CreateUserDto, 
-  CreateUserResponseDto, 
-  GetUsersResponseDto, 
-  ErrorResponseDto 
-} from './dto/api.dto';
-
+import { AppService } from '../../app.service';
+import {
+  HealthResponseDto,
+  DatabaseStatusDto,
+  UserDto,
+  CreateUserDto,
+  GetUsersResponseDto,
+  CreateUserResponseDto,
+  ErrorResponseDto,
+} from '../../dto/api.dto';import { Body, Controller, Get, Post } from '@nestjs/common';
 @ApiTags('app')
 @Controller()
 export class AppController {
