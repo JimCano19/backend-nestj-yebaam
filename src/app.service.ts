@@ -11,6 +11,14 @@ export class AppService {
 
   async getDatabaseStatus() {
     try {
+      if (!db) {
+        return {
+          status: 'error',
+          message: 'Database not initialized - check environment variables',
+          timestamp: new Date().toISOString()
+        };
+      }
+      
       // Intentar hacer una consulta simple
       await db.execute(sql`SELECT 1`);
       return {
@@ -31,6 +39,13 @@ export class AppService {
 
   async createUser(userData: NewUser) {
     try {
+      if (!db) {
+        return {
+          success: false,
+          error: 'Database not available'
+        };
+      }
+      
       const [user] = await db.insert(users).values(userData).returning();
       return {
         success: true,
@@ -46,6 +61,13 @@ export class AppService {
 
   async getUsers() {
     try {
+      if (!db) {
+        return {
+          success: false,
+          error: 'Database not available'
+        };
+      }
+      
       const allUsers = await db.select().from(users);
       return {
         success: true,

@@ -38,7 +38,7 @@ jobs:
         run: pnpm run build
 
       - name: Crear ZIP para deploy
-        run: zip -r deploy.zip . -x ".git/*" "node_modules/*" "*.zip"
+        run: zip -r deploy.zip . -x ".git/*" "node_modules/*" "*.zip" "drizzle.config.ts" "drizzle/*"
 
       - name: Crear bucket S3 si no existe
         run: |
