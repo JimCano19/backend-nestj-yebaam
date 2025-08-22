@@ -40,6 +40,16 @@ jobs:
       - name: Crear ZIP para deploy
         run: zip -r deploy.zip . -x ".git/*" "node_modules/*" "*.zip"
 
+      - name: Crear bucket S3 si no existe
+        run: |
+          BUCKET_NAME="elasticbeanstalk-${{ secrets.AWS_REGION }}-${{ secrets.AWS_ACCOUNT_ID }}"
+          if ! aws s3 ls "s3://$BUCKET_NAME" 2>/dev/null; then
+            echo "Creando bucket $BUCKET_NAME"
+            aws s3 mb "s3://$BUCKET_NAME" --region ${{ secrets.AWS_REGION }}
+          else
+            echo "Bucket $BUCKET_NAME ya existe"
+          fi
+
       - name: Subir ZIP a S3
         run: |
           aws s3 cp deploy.zip s3://elasticbeanstalk-${{ secrets.AWS_REGION }}-${{ secrets.AWS_ACCOUNT_ID }}/deploy-${{ github.run_number }}.zip
