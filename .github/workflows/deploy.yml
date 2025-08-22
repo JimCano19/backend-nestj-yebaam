@@ -42,7 +42,7 @@ jobs:
 
       - name: Crear bucket S3 si no existe
         run: |
-          BUCKET_NAME="elasticbeanstalk-${{ secrets.AWS_REGION }}-${{ secrets.AWS_ACCOUNT_ID }}"
+          BUCKET_NAME="backend-nestjs-deploy-bucket"
           if ! aws s3 ls "s3://$BUCKET_NAME" 2>/dev/null; then
             echo "Creando bucket $BUCKET_NAME"
             aws s3 mb "s3://$BUCKET_NAME" --region ${{ secrets.AWS_REGION }}
@@ -52,14 +52,14 @@ jobs:
 
       - name: Subir ZIP a S3
         run: |
-          aws s3 cp deploy.zip s3://elasticbeanstalk-${{ secrets.AWS_REGION }}-${{ secrets.AWS_ACCOUNT_ID }}/deploy-${{ github.run_number }}.zip
+          aws s3 cp deploy.zip s3://backend-nestjs-deploy-bucket/deploy-${{ github.run_number }}.zip
 
       - name: Deploy a Elastic Beanstalk
         run: |
           aws elasticbeanstalk create-application-version \
             --application-name backend-api \
             --version-label v-${{ github.run_number }} \
-            --source-bundle S3Bucket="elasticbeanstalk-${{ secrets.AWS_REGION }}-${{ secrets.AWS_ACCOUNT_ID }}",S3Key="deploy-${{ github.run_number }}.zip"
+            --source-bundle S3Bucket="backend-nestjs-deploy-bucket",S3Key="deploy-${{ github.run_number }}.zip"
 
           aws elasticbeanstalk update-environment \
             --environment-name backend-api-env \
