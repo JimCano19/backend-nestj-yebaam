@@ -1,16 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, DataSource } from 'typeorm';
-import { User } from './user.entity';
+import { db } from './db';
+import { users, type NewUser } from './schema';
+import { sql } from 'drizzle-orm';
 
 @Injectable()
 export class AppService {
-  constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
-    private dataSource: DataSource,
-  ) {}
-
   getHello(): string {
     return 'Hello World!';
   }
@@ -18,11 +12,12 @@ export class AppService {
   async getDatabaseStatus() {
     try {
       // Intentar hacer una consulta simple
-      await this.dataSource.query('SELECT 1');
+      await db.execute(sql`SELECT 1`);
       return {
         status: 'connected',
         database: process.env.DB_NAME || 'not configured',
         host: process.env.DB_HOST || 'not configured',
+        orm: 'drizzle',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
@@ -34,13 +29,12 @@ export class AppService {
     }
   }
 
-  async createUser(userData: { name: string; email: string }) {
+  async createUser(userData: NewUser) {
     try {
-      const user = this.userRepository.create(userData);
-      const savedUser = await this.userRepository.save(user);
+      const [user] = await db.insert(users).values(userData).returning();
       return {
         success: true,
-        user: savedUser
+        user
       };
     } catch (error) {
       return {
@@ -52,11 +46,11 @@ export class AppService {
 
   async getUsers() {
     try {
-      const users = await this.userRepository.find();
+      const allUsers = await db.select().from(users);
       return {
         success: true,
-        count: users.length,
-        users
+        count: allUsers.length,
+        users: allUsers
       };
     } catch (error) {
       return {
