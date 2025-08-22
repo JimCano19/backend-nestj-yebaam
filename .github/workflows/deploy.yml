@@ -37,8 +37,21 @@ jobs:
       - name: Compilar NestJS
         run: pnpm run build
 
+      - name: Build del proyecto
+        run: pnpm run build
+
+      - name: Ejecutar migraciones de base de datos
+        run: pnpm run db:push
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          NODE_ENV: production
+
       - name: Crear ZIP para deploy
-        run: zip -r deploy.zip . -x ".git/*" "node_modules/*" "*.zip" "drizzle.config.ts" "drizzle/*"
+        run: zip -r deploy.zip . -x ".git/*" "node_modules/*" "*.zip" "drizzle.config.ts" "migrations/*"
 
       - name: Crear bucket S3 si no existe
         run: |
