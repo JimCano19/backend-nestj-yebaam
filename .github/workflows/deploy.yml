@@ -32,11 +32,20 @@ jobs:
 
       - name: Instalar AWS CLI
         run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
 
       - name: Crear ZIP para deploy
-        run: zip -r deploy.zip . -x ".git/*"
+        run: zip -r deploy.zip . -x ".git/*" "node_modules/*" "*.zip"
+
+      - name: Subir ZIP a S3
+        run: |
+          aws s3 cp deploy.zip s3://elasticbeanstalk-${{ secrets.AWS_REGION }}-${{ secrets.AWS_ACCOUNT_ID }}/deploy-${{ github.run_number }}.zip
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
 
       - name: Deploy a Elastic Beanstalk
         run: |
