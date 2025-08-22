@@ -20,10 +20,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Instalar pnpm
-        run: npm install -g pnpm
-
-      - name: Instalar dependencias
-        run: pnpm install --frozen-lockfile
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9 # o la versión que uses en local
+          run_install: true
 
       - name: Compilar NestJS
         run: pnpm run build
