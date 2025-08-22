@@ -56,11 +56,14 @@ jobs:
 
       - name: Deploy a Elastic Beanstalk
         run: |
+          VERSION_LABEL="v-${{ github.run_number }}-$(echo ${{ github.sha }} | cut -c1-7)"
+          echo "Usando version label: $VERSION_LABEL"
+          
           aws elasticbeanstalk create-application-version \
             --application-name ${{ secrets.EB_APPLICATION_NAME }} \
-            --version-label v-${{ github.run_number }} \
+            --version-label "$VERSION_LABEL" \
             --source-bundle S3Bucket="backend-nestjs-deploy-bucket",S3Key="deploy-${{ github.run_number }}.zip"
 
           aws elasticbeanstalk update-environment \
             --environment-name ${{ secrets.EB_ENVIRONMENT_NAME }} \
-            --version-label v-${{ github.run_number }}
+            --version-label "$VERSION_LABEL"
