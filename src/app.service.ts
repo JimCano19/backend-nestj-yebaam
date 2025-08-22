@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { db } from './db';
+import { db } from './database';
 import { users, type NewUser } from './schema';
 import { sql } from 'drizzle-orm';
 
@@ -13,12 +13,12 @@ export class AppService {
     try {
       if (!db) {
         return {
-          status: 'error',
-          message: 'Database not initialized - check environment variables',
+          status: 'not configured',
+          message: 'Database connection not available',
           timestamp: new Date().toISOString()
         };
       }
-      
+
       // Intentar hacer una consulta simple
       await db.execute(sql`SELECT 1`);
       return {
@@ -37,7 +37,7 @@ export class AppService {
     }
   }
 
-  async createUser(userData: NewUser) {
+  async createUser(userData: { name: string; email: string }) {
     try {
       if (!db) {
         return {
@@ -45,7 +45,7 @@ export class AppService {
           error: 'Database not available'
         };
       }
-      
+
       const [user] = await db.insert(users).values(userData).returning();
       return {
         success: true,
@@ -67,7 +67,7 @@ export class AppService {
           error: 'Database not available'
         };
       }
-      
+
       const allUsers = await db.select().from(users);
       return {
         success: true,

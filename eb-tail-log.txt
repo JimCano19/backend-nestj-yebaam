@@ -1,0 +1,260 @@
+----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:    at Module._load (node:internal/modules/cjs/loader:1175:37)
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:    at node:internal/main/run_main_module:36:49 {
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:  code: 'MODULE_NOT_FOUND',
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]:  requireStack: []
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]: }
+Aug 22 21:52:07 ip-172-31-10-156 web[7886]: Node.js v22.18.0
+Aug 22 21:52:08 ip-172-31-10-156 web[7913]: > api-nest@0.0.1 start:prod
+Aug 22 21:52:08 ip-172-31-10-156 web[7913]: > node dist/main
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]: node:internal/modules/cjs/loader:1368
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:  throw err;
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:  ^
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]: Error: Cannot find module '/var/app/current/dist/main'
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at Module._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at Module._load (node:internal/modules/cjs/loader:1175:37)
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:    at node:internal/main/run_main_module:36:49 {
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:  code: 'MODULE_NOT_FOUND',
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]:  requireStack: []
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]: }
+Aug 22 21:52:08 ip-172-31-10-156 web[7927]: Node.js v22.18.0
+Aug 22 21:52:09 ip-172-31-10-156 web[7935]: > api-nest@0.0.1 start:prod
+Aug 22 21:52:09 ip-172-31-10-156 web[7935]: > node dist/main
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]: node:internal/modules/cjs/loader:1368
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:  throw err;
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:  ^
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]: Error: Cannot find module '/var/app/current/dist/main'
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at Module._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at Module._load (node:internal/modules/cjs/loader:1175:37)
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:    at node:internal/main/run_main_module:36:49 {
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:  code: 'MODULE_NOT_FOUND',
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]:  requireStack: []
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]: }
+Aug 22 21:52:09 ip-172-31-10-156 web[7949]: Node.js v22.18.0
+Aug 22 21:52:10 ip-172-31-10-156 web[7957]: > api-nest@0.0.1 start:prod
+Aug 22 21:52:10 ip-172-31-10-156 web[7957]: > node dist/main
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]: node:internal/modules/cjs/loader:1368
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:  throw err;
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:  ^
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]: Error: Cannot find module '/var/app/current/dist/main'
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at Module._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at Module._load (node:internal/modules/cjs/loader:1175:37)
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:    at node:internal/main/run_main_module:36:49 {
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:  code: 'MODULE_NOT_FOUND',
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]:  requireStack: []
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]: }
+Aug 22 21:52:10 ip-172-31-10-156 web[7971]: Node.js v22.18.0
+Aug 22 21:52:10 ip-172-31-10-156 web[7979]: > api-nest@0.0.1 start:prod
+Aug 22 21:52:10 ip-172-31-10-156 web[7979]: > node dist/main
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]: node:internal/modules/cjs/loader:1368
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:  throw err;
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:  ^
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]: Error: Cannot find module '/var/app/current/dist/main'
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at Module._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at Module._load (node:internal/modules/cjs/loader:1175:37)
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:    at node:internal/main/run_main_module:36:49 {
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:  code: 'MODULE_NOT_FOUND',
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]:  requireStack: []
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]: }
+Aug 22 21:52:11 ip-172-31-10-156 web[7993]: Node.js v22.18.0
+Aug 22 21:52:11 ip-172-31-10-156 web[8006]: > api-nest@0.0.1 start:prod
+Aug 22 21:52:11 ip-172-31-10-156 web[8006]: > node dist/main
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]: node:internal/modules/cjs/loader:1368
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:  throw err;
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:  ^
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]: Error: Cannot find module '/var/app/current/dist/main'
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at Module._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at Module._load (node:internal/modules/cjs/loader:1175:37)
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:    at node:internal/main/run_main_module:36:49 {
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:  code: 'MODULE_NOT_FOUND',
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]:  requireStack: []
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]: }
+Aug 22 21:52:12 ip-172-31-10-156 web[8020]: Node.js v22.18.0
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+2025/08/22 21:52:05.950949 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
+
+2025/08/22 21:52:05.951027 [INFO] Running command: systemctl daemon-reload
+2025/08/22 21:52:06.229405 [INFO] Running command: systemctl reset-failed
+2025/08/22 21:52:06.237855 [INFO] Running command: systemctl is-active web.service
+2025/08/22 21:52:06.245047 [INFO] Process web has been fully terminated
+2025/08/22 21:52:06.245070 [INFO] All processes have been fully terminated
+2025/08/22 21:52:06.245087 [INFO] Removing /var/app/current/ if it exists
+2025/08/22 21:52:06.691458 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2025/08/22 21:52:06.691494 [INFO] Register application processes...
+2025/08/22 21:52:06.691501 [INFO] Registering the proc: web
+
+2025/08/22 21:52:06.691516 [INFO] Running command: systemctl show -p PartOf web.service
+2025/08/22 21:52:06.725660 [INFO] Running command: systemctl daemon-reload
+2025/08/22 21:52:06.946535 [INFO] Running command: systemctl reset-failed
+2025/08/22 21:52:06.954368 [INFO] Running command: systemctl is-enabled eb-app.target
+2025/08/22 21:52:06.962421 [INFO] Running command: systemctl enable eb-app.target
+2025/08/22 21:52:07.196566 [INFO] Running command: systemctl start eb-app.target
+2025/08/22 21:52:07.205927 [INFO] Running command: systemctl enable web.service
+2025/08/22 21:52:07.468437 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
+
+2025/08/22 21:52:07.468463 [INFO] Running command: systemctl show -p PartOf web.service
+2025/08/22 21:52:07.479733 [INFO] Running command: systemctl is-active web.service
+2025/08/22 21:52:07.487195 [INFO] Running command: systemctl start web.service
+2025/08/22 21:52:07.535220 [INFO] Executing instruction: start X-Ray
+2025/08/22 21:52:07.535236 [INFO] X-Ray is not enabled.
+2025/08/22 21:52:07.535240 [INFO] Executing instruction: start proxy with new configuration
+2025/08/22 21:52:07.535262 [INFO] Running command: /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2025/08/22 21:52:07.564064 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
+
+2025/08/22 21:52:07.565004 [INFO] Running command: cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2025/08/22 21:52:07.571085 [INFO] Running command: systemctl show -p PartOf nginx.service
+2025/08/22 21:52:07.587673 [INFO] Running command: systemctl daemon-reload
+2025/08/22 21:52:07.879505 [INFO] Running command: systemctl reset-failed
+2025/08/22 21:52:07.888143 [INFO] Running command: systemctl show -p PartOf nginx.service
+2025/08/22 21:52:07.902773 [INFO] Running command: systemctl is-active nginx.service
+2025/08/22 21:52:07.913422 [INFO] Running command: systemctl start nginx.service
+2025/08/22 21:52:08.049793 [INFO] Executing instruction: configureSqsd
+2025/08/22 21:52:08.049809 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2025/08/22 21:52:08.049814 [INFO] Executing instruction: startSqsd
+2025/08/22 21:52:08.049817 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2025/08/22 21:52:08.049820 [INFO] Executing instruction: Track pids in healthd
+2025/08/22 21:52:08.049824 [INFO] This is an enhanced health env...
+2025/08/22 21:52:08.049836 [INFO] Running command: systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2025/08/22 21:52:08.060935 [INFO] cfn-hup.service healthd.service nginx.service
+
+2025/08/22 21:52:08.060961 [INFO] Running command: systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2025/08/22 21:52:08.071070 [INFO] web.service
+
+2025/08/22 21:52:08.071180 [WARN] failed to read file /var/pids/web.pid with error: open /var/pids/web.pid: no such file or directory
+2025/08/22 21:52:09.071294 [WARN] failed to read file /var/pids/web.pid with error: open /var/pids/web.pid: no such file or directory
+2025/08/22 21:52:11.072741 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2025/08/22 21:52:11.072821 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2025/08/22 21:52:11.072844 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2025/08/22 21:52:11.072854 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2025/08/22 21:52:11.072861 [INFO] Executing cleanup logic
+2025/08/22 21:52:11.074253 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1755899531072,"severity":"INFO"}]}]}
+
+2025/08/22 21:52:11.074859 [INFO] Platform Engine finished execution on command: app-deploy
+
+2025/08/22 21:55:10.159706 [INFO] Starting...
+2025/08/22 21:55:10.159758 [INFO] Starting EBPlatform-PlatformEngine
+2025/08/22 21:55:10.159780 [INFO] reading event message file
+2025/08/22 21:55:10.169060 [INFO] Engine received EB command cfn-hup-exec
+
+2025/08/22 21:55:10.337987 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:842955450453:stack/awseb-e-29jwm3ui57-stack/701ab6b0-7f9c-11f0-a1d3-0affc6ecdf33 -r AWSEBAutoScalingGroup --region us-east-1
+2025/08/22 21:55:10.642468 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:842955450453:stack/awseb-e-29jwm3ui57-stack/701ab6b0-7f9c-11f0-a1d3-0affc6ecdf33 -r AWSEBBeanstalkMetadata --region us-east-1
+2025/08/22 21:55:10.957547 [INFO] checking whether command tail-log is applicable to this instance...
+2025/08/22 21:55:10.957566 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/08/22 21:55:10.957571 [INFO] Engine command: (tail-log)
+
+2025/08/22 21:55:10.958679 [INFO] Executing instruction: GetTailLogs
+2025/08/22 21:55:10.958686 [INFO] Tail Logs...
+2025/08/22 21:55:10.962490 [INFO] Running command: tail -n 100 /var/log/web.stdout.log
+2025/08/22 21:55:10.964534 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+2025/08/22 21:55:10.966373 [INFO] Running command: tail -n 100 /var/log/eb-hooks.log
+2025/08/22 21:55:10.968089 [INFO] Running command: tail -n 100 /var/log/nginx/access.log
+2025/08/22 21:55:10.969996 [INFO] Running command: tail -n 100 /var/log/nginx/error.log
+2025/08/22 21:55:11.058422 [INFO] Executing cleanup logic
+2025/08/22 21:55:11.058499 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1755899711058,"severity":"INFO"}]}]}
+
+2025/08/22 21:55:11.058515 [INFO] Platform Engine finished execution on command: tail-log
+
+2025/08/22 21:55:55.626832 [INFO] Starting...
+2025/08/22 21:55:55.626886 [INFO] Starting EBPlatform-PlatformEngine
+2025/08/22 21:55:55.626914 [INFO] reading event message file
+2025/08/22 21:55:55.627268 [INFO] Engine received EB command cfn-hup-exec
+
+2025/08/22 21:55:55.692227 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:842955450453:stack/awseb-e-29jwm3ui57-stack/701ab6b0-7f9c-11f0-a1d3-0affc6ecdf33 -r AWSEBAutoScalingGroup --region us-east-1
+2025/08/22 21:55:55.986921 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:842955450453:stack/awseb-e-29jwm3ui57-stack/701ab6b0-7f9c-11f0-a1d3-0affc6ecdf33 -r AWSEBBeanstalkMetadata --region us-east-1
+2025/08/22 21:55:56.280986 [INFO] checking whether command tail-log is applicable to this instance...
+2025/08/22 21:55:56.281002 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/08/22 21:55:56.281006 [INFO] Engine command: (tail-log)
+
+2025/08/22 21:55:56.281063 [INFO] Executing instruction: GetTailLogs
+2025/08/22 21:55:56.281067 [INFO] Tail Logs...
+2025/08/22 21:55:56.281400 [INFO] Running command: tail -n 100 /var/log/web.stdout.log
+2025/08/22 21:55:56.283648 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
+/var/log/eb-hooks.log
+----------------------------------------
+
+
+----------------------------------------
+/var/log/nginx/access.log
+----------------------------------------
+201.221.176.33 - - [22/Aug/2025:21:17:11 +0000] "GET / HTTP/1.1" 502 150 "-" "curl/7.81.0" "-"
+201.221.176.33 - - [22/Aug/2025:21:19:31 +0000] "GET / HTTP/1.1" 200 12 "-" "curl/7.81.0" "-"
+201.221.176.33 - - [22/Aug/2025:21:20:01 +0000] "GET / HTTP/1.1" 200 12 "-" "curl/7.81.0" "-"
+135.237.126.209 - - [22/Aug/2025:21:33:33 +0000] "GET /developmentserver/metadatauploader HTTP/1.1" 404 97 "-" "Mozilla/5.0 zgrab/0.x" "-"
+119.205.167.19 - - [22/Aug/2025:21:36:09 +0000] "GET / HTTP/1.0" 400 0 "-" "-" "-"
+201.221.176.33 - - [22/Aug/2025:21:36:32 +0000] "GET /health HTTP/1.1" 200 81 "-" "curl/7.81.0" "-"
+201.221.176.33 - - [22/Aug/2025:21:36:45 +0000] "GET /db-status HTTP/1.1" 200 203 "-" "curl/7.81.0" "-"
+201.221.176.33 - - [22/Aug/2025:21:37:40 +0000] "POST /users HTTP/1.1" 201 60 "-" "curl/7.81.0" "-"
+201.221.176.33 - - [22/Aug/2025:21:48:32 +0000] "HEAD / HTTP/1.1" 502 0 "-" "curl/7.81.0" "-"
+
+
+----------------------------------------
+/var/log/nginx/error.log
+----------------------------------------
+2025/08/22 21:12:29 [warn] 2164#2164: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:12:29 [warn] 2214#2214: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:12:29 [warn] 2215#2215: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:17:07 [warn] 2887#2887: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:17:07 [warn] 2933#2933: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:17:07 [warn] 2936#2936: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:17:11 [error] 2940#2940: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 201.221.176.33, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8080/", host: "54.205.31.13"
+2025/08/22 21:19:10 [warn] 3616#3616: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:19:10 [warn] 3666#3666: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:19:10 [warn] 3667#3667: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:25:12 [warn] 4407#4407: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:25:12 [warn] 4456#4456: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:25:12 [warn] 4458#4458: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:29:02 [warn] 5126#5126: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:29:03 [warn] 5176#5176: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:29:03 [warn] 5177#5177: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:36:00 [warn] 5934#5934: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:36:00 [warn] 5984#5984: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:36:00 [warn] 5986#5986: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:44:20 [warn] 6867#6867: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:44:21 [warn] 6910#6910: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:44:21 [warn] 6911#6911: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:48:32 [error] 6913#6913: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 201.221.176.33, server: , request: "HEAD / HTTP/1.1", upstream: "http://127.0.0.1:8080/", host: "54.205.31.13"
+2025/08/22 21:52:07 [warn] 7848#7848: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:52:07 [warn] 7898#7898: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2025/08/22 21:52:07 [warn] 7899#7899: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+
+
