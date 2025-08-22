@@ -19,11 +19,12 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Instalar pnpm
+      - name: Instalar pnpm y dependencias
         uses: pnpm/action-setup@v2
         with:
-          version: 9 # o la versión que uses en local
+          version: 9
           run_install: true
+          run_install_args: --frozen-lockfile
 
       - name: Compilar NestJS
         run: pnpm run build
