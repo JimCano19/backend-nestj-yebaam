@@ -54,41 +54,13 @@ jobs:
         run: |
           aws s3 cp deploy.zip s3://backend-nestjs-deploy-bucket/deploy-${{ github.run_number }}.zip
 
-      - name: Crear aplicación Elastic Beanstalk si no existe
-        run: |
-          if ! aws elasticbeanstalk describe-applications --application-names backend-api 2>/dev/null | grep -q backend-api; then
-            echo "Creando aplicación backend-api"
-            aws elasticbeanstalk create-application \
-              --application-name backend-api \
-              --description "Backend API NestJS"
-          else
-            echo "Aplicación backend-api ya existe"
-          fi
-
-      - name: Crear ambiente si no existe
-        run: |
-          if ! aws elasticbeanstalk describe-environments --application-name backend-api --environment-names backend-api-env 2>/dev/null | grep -q backend-api-env; then
-            echo "Creando ambiente backend-api-env"
-            aws elasticbeanstalk create-environment \
-              --application-name backend-api \
-              --environment-name backend-api-env \
-              --solution-stack-name "64bit Amazon Linux 2 v5.8.4 running Node.js 18" \
-              --option-settings Namespace=aws:autoscaling:launchconfiguration,OptionName=InstanceType,Value=t3.micro \
-              --description "Ambiente de producción para Backend API"
-            
-            echo "Esperando a que el ambiente esté listo..."
-            aws elasticbeanstalk wait environment-ready --application-name backend-api --environment-names backend-api-env
-          else
-            echo "Ambiente backend-api-env ya existe"
-          fi
-
       - name: Deploy a Elastic Beanstalk
         run: |
           aws elasticbeanstalk create-application-version \
-            --application-name backend-api \
+            --application-name ${{ secrets.EB_APPLICATION_NAME }} \
             --version-label v-${{ github.run_number }} \
             --source-bundle S3Bucket="backend-nestjs-deploy-bucket",S3Key="deploy-${{ github.run_number }}.zip"
 
           aws elasticbeanstalk update-environment \
-            --environment-name backend-api-env \
+            --environment-name ${{ secrets.EB_ENVIRONMENT_NAME }} \
             --version-label v-${{ github.run_number }}
