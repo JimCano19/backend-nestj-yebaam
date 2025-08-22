@@ -13,18 +13,19 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
 
+      - name: Instalar pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
       - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Instalar pnpm y dependencias
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9
-          run_install: true
-          run_install_args: --frozen-lockfile
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
 
       - name: Compilar NestJS
         run: pnpm run build
