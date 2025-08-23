@@ -1,4 +1,4 @@
-import { Injectable, OnModuleInit, Inject } from '@nestjs/common';
+import { Injectable, OnModuleInit, Inject, Logger } from '@nestjs/common';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import * as schema from '../schema';
 import { sql } from 'drizzle-orm';
@@ -18,6 +18,8 @@ export const POSTGRES_CONFIG = 'POSTGRES_CONFIG';
 
 @Injectable()
 export class DrizzleService implements OnModuleInit {
+  private readonly logger = new Logger(DrizzleService.name);
+
   private db: ReturnType<typeof drizzle>;
   private client: ReturnType<typeof postgres>;
 
@@ -38,9 +40,9 @@ export class DrizzleService implements OnModuleInit {
     // Test connection
     try {
       await this.client`SELECT 1`;
-      console.log(' Drizzle PostgreSQL connected successfully');
+      this.logger.log(' Drizzle PostgreSQL connected successfully');
     } catch (error) {
-      console.error(' Drizzle PostgreSQL connection failed:', error);
+      this.logger.error(' Drizzle PostgreSQL connection failed:', error);
     }
   }
 
