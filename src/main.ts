@@ -32,10 +32,10 @@ async function bootstrap() {
 
   setupSwagger(app);
 
-  await app.listen(envs.PORT);
-  
+  await app.listen(envs.PORT || 8080);
+
   logger.log(`SERVER RUNNING ON ${baseUrl}`);
-  logger.log(`SWAGGER DOCS: ${baseUrl}/doc`);
+  logger.log(`SWAGGER DOCS: ${baseUrl}/api/doc`);
   logger.log(`GRAPHQL: ${baseUrl}/api`);
   logger.log(`ENVIRONMENT: ${envs.NODE_ENV}`);
   logger.log(`VERSION: v1`);
