@@ -1,27 +1,42 @@
-import { NestFactory } from '@nestjs/core';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { Logger, ValidationPipe, VersioningType } from '@nestjs/common';
+import { json } from 'express';
+import { setupSecurity } from '@config/security.config';
+import { setupCors } from '@config/cors.config';
+import { setupSwagger } from '@shared/doc/swagger.config';
+import { envs } from '@config/envs';
+import { baseUrl } from '@config/url.config';
+import { NestFactory } from '@nestjs/core';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const logger = new Logger('API-MAIN');
 
-  // Configuración de Swagger
-  const config = new DocumentBuilder()
-    .setTitle('Yebaam API')
-    .setDescription('API Backend para Yebaam - Sistema de gestión con NestJS y Drizzle ORM')
-    .setVersion('1.0')
-    .addTag('health', 'Endpoints de salud y estado del sistema')
-    .addTag('database', 'Endpoints relacionados con la base de datos')
-    .addTag('users', 'Gestión de usuarios')
-    .build();
-
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document, {
-    customSiteTitle: 'Yebaam API Documentation',
-    customfavIcon: 'https://nestjs.com/img/logo_text.svg',
-    customCss: '.swagger-ui .topbar { display: none }',
+  const app = await NestFactory.create(AppModule, {
+    rawBody: true,
   });
 
-  await app.listen(process.env.PORT ?? 3000);
+  setupSecurity(app);
+  setupCors(app);
+
+  app.use(json({ limit: '60mb' }));
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+    }),
+  );
+  app.setGlobalPrefix('api');
+  app.enableVersioning({
+    defaultVersion: '1',
+    type: VersioningType.URI,
+  });
+
+  setupSwagger(app);
+
+  await app.listen(envs.PORT);
+  
+  logger.log(`🚀 SERVER RUNNING ON ${baseUrl}`);
+  logger.log(`📚 SWAGGER DOCS: ${baseUrl}/api`);
+  logger.log(`🌍 ENVIRONMENT: ${envs.NODE_ENV}`);
+  logger.log(`🔧 VERSION: v1`);
 }
-bootstrap();
+void bootstrap();

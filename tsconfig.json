@@ -18,7 +18,52 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      //  Core Domain
+      "@core/*": ["src/core/*"],
+      "@core/shared/*": ["src/core/shared/*"],
+      "@core/domain/*": ["src/core/shared/domain/*"],
+      "@core/application/*": ["src/core/shared/application/*"],
+      "@core/infrastructure/*": ["src/core/shared/infrastructure/*"],
+      "@core/presentation/*": ["src/core/shared/presentation/*"],
+      
+      //  Auth Module
+      "@auth/*": ["src/auth/*"],
+      "@auth/domain/*": ["src/auth/domain/*"],
+      "@auth/application/*": ["src/auth/application/*"],
+      "@auth/infrastructure/*": ["src/auth/infrastructure/*"],
+      "@auth/presentation/*": ["src/auth/presentation/*"],
+      
+      //  User Module
+      "@user/*": ["src/user/*"],
+      "@user/domain/*": ["src/user/domain/*"],
+      "@user/application/*": ["src/user/application/*"],
+      "@user/infrastructure/*": ["src/user/infrastructure/*"],
+      "@user/presentation/*": ["src/user/presentation/*"],
+      
+      //  Notification Module
+      "@notification/*": ["src/notification/*"],
+      "@notification/domain/*": ["src/notification/domain/*"],
+      "@notification/application/*": ["src/notification/application/*"],
+      "@notification/infrastructure/*": ["src/notification/infrastructure/*"],
+      "@notification/presentation/*": ["src/notification/presentation/*"],
+      
+      //  Shared Modules
+      "@shared/*": ["src/shared/*"],
+      "@shared/redis/*": ["src/shared/redis/*"],
+      "@shared/sqs/*": ["src/shared/sqs/*"],
+      "@shared/websocket/*": ["src/shared/websocket/*"],
+      "@shared/graphql/*": ["src/shared/graphql/*"],
+      "@shared/email/*": ["src/shared/email/*"],
+      "@shared/database/*": ["src/shared/database/*"],
+      
+      //  Common paths
+      "@config/*": ["src/config/*"],
+      "@utils/*": ["src/utils/*"],
+      "@types/*": ["src/types/*"],
+      "@constants/*": ["src/constants/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "drizzle", "drizzle.config.ts"]
