@@ -15,6 +15,9 @@ async function bootstrap() {
     rawBody: true,
   });
 
+  // Configurar trust proxy para Elastic Beanstalk
+  app.getHttpAdapter().getInstance().set('trust proxy', true);
+
   setupSecurity(app);
   setupCors(app);
 
@@ -31,7 +34,7 @@ async function bootstrap() {
   });
 
   setupSwagger(app);
-  const port = envs.PORT || 8080;
+  const port = process.env.PORT || 8080;
   await app.listen(port, '0.0.0.0');
 
   logger.log(`SERVER RUNNING ON ${baseUrl}`);
