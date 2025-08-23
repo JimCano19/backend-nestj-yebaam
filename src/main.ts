@@ -31,14 +31,14 @@ async function bootstrap() {
   });
 
   setupSwagger(app);
-
-  await app.listen(envs.PORT || 8080);
+  const port = envs.PORT || 8080;
+  await app.listen(port, '0.0.0.0');
 
   logger.log(`SERVER RUNNING ON ${baseUrl}`);
   logger.log(`SWAGGER DOCS: ${baseUrl}/api/doc`);
   logger.log(`GRAPHQL: ${baseUrl}/api`);
   logger.log(`ENVIRONMENT: ${envs.NODE_ENV}`);
   logger.log(`VERSION: v1`);
-  
+
 }
 void bootstrap();
