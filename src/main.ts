@@ -34,9 +34,11 @@ async function bootstrap() {
 
   await app.listen(envs.PORT);
   
-  logger.log(`🚀 SERVER RUNNING ON ${baseUrl}`);
-  logger.log(`📚 SWAGGER DOCS: ${baseUrl}/api`);
-  logger.log(`🌍 ENVIRONMENT: ${envs.NODE_ENV}`);
-  logger.log(`🔧 VERSION: v1`);
+  logger.log(`SERVER RUNNING ON ${baseUrl}`);
+  logger.log(`SWAGGER DOCS: ${baseUrl}/api`);
+  logger.log(`GRAPHQL: ${baseUrl}/api`);
+  logger.log(`ENVIRONMENT: ${envs.NODE_ENV}`);
+  logger.log(`VERSION: v1`);
+  
 }
 void bootstrap();
