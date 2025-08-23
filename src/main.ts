@@ -16,7 +16,7 @@ async function bootstrap() {
   });
 
   // Configurar trust proxy para Elastic Beanstalk
-  app.getHttpAdapter().getInstance().set('trust proxy', true);
+  app.getHttpAdapter().getInstance().set('trust proxy', 1);
 
   setupSecurity(app);
   setupCors(app);
